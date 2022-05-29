@@ -45,6 +45,9 @@ main {
 section {
     width: 90%;
 }
+pre {
+    background-color:#c1d8b7;
+}
 #disclaimer {
     color: red;
     font-weight: 900;
