@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SASS vs CSS</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header >
+            <h2>SASS vs CSS</h2>
+        </header>
+        <a class="nav-link" href="#What_is_SASS?">What is SASS</a>
+        <a class="nav-link" href="#It_is_CSS_syntax_friendly">It is CSS syntax friendly</a>
+        <a class="nav-link" href="#It_offers_variables_for_whatever_you_want">It offers variables for whatever you want</a>
+        <a class="nav-link" href="#It_uses_nested_syntax">It uses nested syntax</a>
+        <a class="nav-link" href="#It_includes_mixins">It includes mixins</a>
+    </nav>
+    <main id="main-doc">
+        <section id="What_is_SASS?" class="main-section">
+            <header>
+                <h3>What is SASS?</h3>
+            </header>
+                <p>SASS (Syntactically Awesome Stylesheets) is a CSS pre-processor that lets you use variables, mathematical operations, mixins, loops, functions, imports, and other interesting functionalities that make writing CSS much more powerful. In some ways, you may think of SASS as a style sheet extension language because it extends the standard CSS characteristics by introducing the benefits of a basic programming language. So SASS will compile your code and generate the CSS output a browser can understand.</p>
+                <p>Yes, you just read "programming language" but it really is basic stuff. If you are a programmer, it will only take you 15 minutes to get SASS. But if you have no experience coding, then your learning curve will be a little higher. Once you learn CSS with SASS, you won't write CSS from scratch anymore.</p>
+        
+        </section>
+        <section id="It_is_CSS_syntax_friendly" class="main-section">
+            <header>
+                <h3>It is CSS syntax friendly</h3>
+            </header>
+                <p>If you know CSS, you know SASS. SASS comes with two different syntaxes: SASS itself and SCSS, the most used one. SCSS syntax is CSS compatible, so you just have to rename your .css file to .scss et voilà! Your first SCSS file has been created, just like that.</p>
+                <p>Of course, by doing this you are not using any of the superpowers and abilities SASS provides, but at least you realize you don't need to spend hours and hours to start using SASS. From this starting point, you would be able to learn the SASS syntax as you go.</p>
+                <p>Here's where you can learn about the <a target="_blank" href="https://sass-lang.com/guide">SASS basics.</a></p>
+
+        </section>
+        <section id="It_offers_variables_for_whatever_you_want" class="main-section">
+            <header>
+                <h3>It offers variables for whatever you want</h3>
+            </header>
+                <p>One of the great benefits of using a CSS pre-processor like SASS is the ability to use variables. A variable allows you to store a value or a set of values, and to reuse these variables throughout your SASS files as many times you want and wherever you want. Easy, powerful, and useful.</p>
+                <p>Imagine a scenario in which you're building a site with a fantastic blue colour everywhere; buttons, menus, icons, containers, etc. You're also using a couple of great fonts: Ubuntu and Nunito. Using traditional CSS, you would need to repeat the same code over and over, but with SASS you can store these values as variables:</p>
+                <pre>
+                    <code>
+    $blue: #004BB4;
+    $ubuntu-font: 'Ubuntu', 'Arial', 'Helvetica', sans-serif;
+    $nunito-font: 'Nunito', 'Arial', 'Helvetica', sans-serif;
+                    </code>
+                </pre>
+                <p>Once you have created the variables, you can use them wherever you need to, like this:</p>
+                <pre>
+                    <code>
+    h1 {
+        font: $ubuntu-font;
+        color: $blue;
+        }
+        a {
+        font: $nunito-font;
+        background-color: $blue;
+        padding: 6px;
+        }
+                    </code>
+                </pre>
+                <p>When you compile your SCSS files, SASS will take care of the variables you used, replacing the variable name with its stored value. Powerful, right? And, of course, changing the value of the colour is as quick as updating the variable content and re-compiling. The days of using "Find and Replace" in your text editor to update colours in your CSS file are gone!</p>
+        </section>
+
+        </section>
+        <section id="It_uses_nested_syntax" class="main-section">
+            <header>
+                <h3>It uses nested syntax</h3>
+            </header>
+            <a>Another fantastic benefit of CSS pre-processors is their improved syntax. SASS allows you to use a nested syntax, which is code contained within another piece of code that performs a wider function. In SASS, nesting allows a cleaner way of targeting elements. In other words, you can nest your HTML elements by using <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">CSS selectors.</a></p>
+            <p>Benefits of nesting:</p>
+            <ul>
+                <li>More natural syntax and easy to read in most cases</li>
+                <li>Prevents the need to rewrite selectors multiple times</li>
+                <li>Better code organization and structure thanks to its visual hierarchy, which bring us to...</li>
+                <li>More maintainable code.</li>
+            </ul>
+            <p>Example of nested SASS (SCSS syntax) code:</p>
+            <pre>
+                <code>
+    .navbar {
+        font: $ubuntu-font;
+        color: $blue;
+        li {
+            margin-left: 1rem;
+            a {
+            padding: 5px;
+            font-size: 1.5rem;
+            span {
+                font-weight: 600;
+            }
+            }
+        }
+        }
+                </code>
+            </pre>
+            <p>However, be aware that nesting too deeply is not good practice. The deeper you nest, the more verbose the SASS file becomes and the larger the compiled CSS will potentially be, since the nesting is flattened when compiled. So, overuse of nesting can create:</p>
+            <ul>
+                <li>Overly specific CSS rules that are hard to maintain</li>
+                <li>Selectors that cannot be reused</li>
+                <li>Performance issues. Nested selectors will create a long CSS selector string that will end up generating a bigger CSS file.</li>
+            </ul>
+        </section>
+
+        </section>
+        <section id="It_includes_mixins" class="main-section">
+            <header>
+                <h3>It includes mixins</h3>
+            </header>
+            <p>Using variables is great but what if you have blocks of code repeating in your style sheet more than once? That is when mixins come into play. Mixins are like functions in other programming languages. They return a value or set of values and can take parameters including default values. Note that SASS also has functions, so do not confuse a mixin with a function.</p>
+            <p>Let's look at an example. Imagine you have this mixin:</p>
+            <pre>
+                <code>
+    @mixin set-font( $family: 'Ubuntu' , $weight: 400 , $style: normal ) {
+        font-family: $family , 'Arial', 'Helvetica', sans-serif;
+        font-style: $style;
+        font-weight: $weight;
+        }
+                </code>
+            </pre>
+            <p>Now that you have your mixin defined, you can include it wherever you want. Note that because you have declared default values there is no need to pass any parameter:</p>
+            <pre>
+                <code>
+    h1 {
+        @include set-font;
+        color: $blue;
+        }
+                </code>
+            </pre>
+            <p>This will be compiled into:</p>
+            <pre>
+                <code>
+    h1 {
+        font-family: 'Ubuntu', 'Arial', 'Helvetica', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #004BB4;
+        }
+                </code>
+            </pre>
+            <p>If you want to update the default mixin values, you just need to pass the parameters within the @include call.</p>
+            <pre>    
+                <code>
+    h1.callout {
+        @include set-font('Nunito',600);
+        color: $blue;
+        }
+                </code>
+            </pre>
+        </section>
+        <p id="disclaimer">ALL CONTENT DISPLAYED IN THIS PROJECT HAS BEEN TAKEN FROM <a target="_blank" href="https://www.mugo.ca/Blog/7-benefits-of-using-SASS-over-conventional-CSS">MUGO.CA</a> CLICK TO READ MORE IN THEIR WEBSITE</p>
+    </main>
+    
+</body>
+</html>
