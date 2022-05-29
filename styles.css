@@ -34,9 +34,6 @@ body {
     font-size: 1.3rem;
 
 }
-.nav-link:hover {
-    background-color: #fff;
-}
 main {
     width: 80%;
     margin-left: 20%;
