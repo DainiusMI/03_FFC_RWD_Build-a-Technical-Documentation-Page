@@ -65,6 +65,10 @@ main {
 section {
     width: 90%;
 }
+text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 pre {
     background-color:#c1d8b7;
     border-radius: 4px;
